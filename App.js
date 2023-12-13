@@ -1,13 +1,21 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, Text, ScrollView, SafeAreaView } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
 
-const App = () => {
-  return (
-    <View>
-      <Text>Hello, React Native! This is my first React Native App</Text>
-    </View>
-  );
-};
+import { COLORS, icons, images, SIZES } from './constants';
+import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from './components';
 
+const Home = () => {
+    const router = useRouter();
+    return (
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+            <Stack.Screen
+                options={{
+                    headerStyle: { backgroundColor: COLORS.lightWhite },
+                }}
+            />
+        </SafeAreaView>
+    )
+}
 
-export default App;
+export default Home;
